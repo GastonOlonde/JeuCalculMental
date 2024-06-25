@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JeuCalculMental</string>
+    <string name="text_play">Jouer</string>
+    <string name="text_score">Meilleurs Scores</string>
+    <string name="about">À propos</string>
+    <string name="text_developed_by">Développé par</string>
 </resources>

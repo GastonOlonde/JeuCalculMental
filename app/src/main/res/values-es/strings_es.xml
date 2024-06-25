@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Juego de cálculo mental</string>
+    <string name="text_play">Jugar</string>
+    <string name="text_score">Mejores puntuaciones</string>
+    <string name="about">Por cierto</string>
+    <string name="text_developed_by">Desarrollado por</string>
+</resources>
