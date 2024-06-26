@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class GameActivity extends AppCompatActivity {
     private int score = 0;
     private int lives = 3;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        progressBar = findViewById(R.id.progressBar);
         updateToolbar();
         generateNewQuestion();
     }
@@ -26,6 +30,7 @@ public class GameActivity extends AppCompatActivity {
         TextView livesView = findViewById(R.id.lives);
         scoreView.setText("Score: " + score);
         livesView.setText("Lives: " + lives);
+        updateLivesDisplay();
     }
 
     private void generateNewQuestion() {
@@ -44,6 +49,7 @@ public class GameActivity extends AppCompatActivity {
 
         if (userAnswer == correctAnswer) {
             score++;
+            progressBar.setProgress(score+50);
         } else {
             lives--;
         }
@@ -54,6 +60,22 @@ public class GameActivity extends AppCompatActivity {
             updateToolbar();
             generateNewQuestion();
             answerView.setText("");
+        }
+    }
+
+    private void updateLivesDisplay() {
+        ImageView coeur1 = findViewById(R.id.coeur1);
+        ImageView coeur2 = findViewById(R.id.coeur2);
+        ImageView coeur3 = findViewById(R.id.coeur3);
+
+        if (lives < 3) {
+            coeur1.setImageResource(R.drawable.coeursgris);
+        }
+        if (lives < 2) {
+            coeur2.setImageResource(R.drawable.coeursgris);
+        }
+        if (lives < 1) {
+            coeur3.setImageResource(R.drawable.coeursgris);
         }
     }
 
