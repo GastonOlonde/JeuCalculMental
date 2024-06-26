@@ -5,4 +5,7 @@
     <string name="text_score">Mejores puntuaciones</string>
     <string name="about">Por cierto</string>
     <string name="text_developed_by">Desarrollado por</string>
+    <string name="premier">PRIMERO</string>
+    <string name="deuxieme">SEGUNDO</string>
+    <string name="troisieme">TERCERO</string>
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="100dp"
+    android:layout_height="match_parent"
+    android:background="@color/colorbg"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
@@ -10,10 +10,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_developed_by" />
+        android:text="@string/text_developed_by"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Olonde Gaston, Bonnement Léo" />
+        android:text="Olonde Gaston, Bonnement Léo"
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
 </LinearLayout>

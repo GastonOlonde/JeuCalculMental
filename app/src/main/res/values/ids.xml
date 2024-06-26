@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="high_score" type="id" />
+    <item name="name" type="id" />
+    <item name="rank" type="id" />
+    <item name="posistion" type="id" />
+</resources>

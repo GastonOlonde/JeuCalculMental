@@ -2,13 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/colorbg"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/high_score"
+        android:id="@+id/high_score_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="High Score:"/>
+        android:text="High Scores:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:paddingBottom="16dp" />
+
+    <ListView
+        android:id="@+id/score_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="16dp"
+        android:paddingTop="16dp"
+        />
 </LinearLayout>
