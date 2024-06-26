@@ -4,4 +4,5 @@
     <item name="name" type="id" />
     <item name="rank" type="id" />
     <item name="posistion" type="id" />
+    <item name="constraintLayout" type="id" />
 </resources>
