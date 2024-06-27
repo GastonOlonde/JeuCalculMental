@@ -15,7 +15,7 @@
             <shape android:shape="rectangle">
                 <corners android:radius="10dp"/>
                 <size android:height="150dp"/>
-                <solid android:color="#FFFF66"/>
+                <solid android:color="@color/btn_color1"/>
             </shape>
         </scale>
     </item>
