@@ -16,9 +16,13 @@
     <string name="passer">Pasar</string>
     <string name="HighScores">Mejores puntuaciones</string>
     <string name="text_bonus">Caracteristicas adicionales</string>
-    <string name="bonus">
-        Actividad de juego con barra de progreso, corazones para vidas, un teclado personalizado y combinación de puntos.
-        Música de fondo y efectos de sonido, ajustable en la configuración.
+    <string name="bonus1">
+        Barra de progreso de puntuación, teclado personalizado y combinación de puntos.
+    </string>
+    <string name="bonus2">
+        Música de fondo y efectos de sonido, ajustables en la configuración.
+    </string>
+    <string name="bonus3">
         Animación de fondo en ActivityAbout.
     </string>
 </resources>

@@ -5,9 +5,9 @@ import android.media.MediaPlayer;
 
 public class MusicManager {
     private static MediaPlayer mediaPlayer;
-    private static int currentVolume = 50; // Exemple de volume par défaut
+    private static int currentVolume = 50;
     private static int currentIndex = 0;
-    private static int[] musicResources = {R.raw.musique1, R.raw.musique2}; // Ajoutez toutes vos ressources ici
+    private static int[] musicResources = {R.raw.musique1, R.raw.musique2, R.raw.musique3, R.raw.musique4};
 
     public static void startMusic(Context context) {
         if (mediaPlayer != null) {
@@ -16,13 +16,12 @@ public class MusicManager {
         }
 
         mediaPlayer = MediaPlayer.create(context, musicResources[currentIndex]);
-        mediaPlayer.setLooping(false); // Pas besoin de boucler manuellement
+        mediaPlayer.setLooping(false);
         mediaPlayer.setVolume(currentVolume / 100f, currentVolume / 100f);
 
         mediaPlayer.setOnCompletionListener(mp -> {
-            // Lorsque la musique en cours est terminée, passer à la suivante
             currentIndex = (currentIndex + 1) % musicResources.length;
-            startMusic(context); // Appel récursif pour charger la musique suivante
+            startMusic(context);
         });
 
         mediaPlayer.start();
@@ -58,7 +57,7 @@ public class MusicManager {
     }
 
     public static void playNext(Context context) {
-        currentIndex = (currentIndex + 1) % musicResources.length; // Passer à la musique suivante
-        startMusic(context); // Démarrer la nouvelle musique
+        currentIndex = (currentIndex + 1) % musicResources.length;
+        startMusic(context);
     }
 }

@@ -37,9 +37,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game); // Move this line to the top
+        setContentView(R.layout.activity_game);
 
-        // Initialize the buttons after setting the content view
         Button btn1 = findViewById(R.id.btn1);
         Button btn2 = findViewById(R.id.btn2);
         Button btn3 = findViewById(R.id.btn3);
@@ -86,7 +85,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void ajouterCharactere(String chiffreAAjouter) {
-        answer.append(chiffreAAjouter); // Use append instead of setText
+        answer.append(chiffreAAjouter);
     }
 
     private void updateToolbar() {
@@ -179,7 +178,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void startFadeInOutAnimation() {
-        textViewCombo.setVisibility(View.VISIBLE); // Rend la TextView visible avant de démarrer l'animation
+        textViewCombo.setVisibility(View.VISIBLE);
         textViewCombo.startAnimation(fadeInOutAnimation);
     }
 

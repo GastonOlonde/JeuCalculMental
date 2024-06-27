@@ -10,6 +10,7 @@
     <color name="btn_color1">#C610EF</color>
     <color name="btn_color2">#FF6200EE</color>
     <color name="colorbg">#292929</color>
+    <color name="colorbg2">#A11E1E1E</color>
     <color name="primary">#FF6200EE</color>
     <color name="primary_dark">#FF3700B3</color>
 </resources>

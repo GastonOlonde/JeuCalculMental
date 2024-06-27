@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Démarrer la musique
         MusicManager.startMusic(this);
 
         Button btnStartGame = findViewById(R.id.btnStartGame);
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Arrêter la musique lorsque l'activité est détruite
         MusicManager.stopMusic();
     }
 }

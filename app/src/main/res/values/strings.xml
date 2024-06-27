@@ -15,9 +15,13 @@
     <string name="passer">Passer</string>
     <string name="HighScores">Meilleurs Scores</string>
     <string name="text_bonus">Fonctionnalités Bonus</string>
-    <string name="bonus">
-        Activity game avec progressBar, coeurs pour les vies, un clavier personnalisé et combo de points.
+    <string name="bonus1">
+        Score progressBar , un clavier personnalisé et combo de points.
+    </string>
+    <string name="bonus2">
         Musiques de fond et effets sonores, reglable dans les paramètres.
+    </string>
+    <string name="bonus3">
         Animation de fond sur ActivityAbout.
     </string>
 </resources>

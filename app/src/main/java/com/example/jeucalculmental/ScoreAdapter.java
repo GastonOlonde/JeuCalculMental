@@ -25,7 +25,6 @@ public class ScoreAdapter extends ArrayAdapter<Score> {
         TextView rankTextView = convertView.findViewById(R.id.position);
 
 
-        // rank position , string premier, second, third depuis le fichier strings.xml
         if (position == 0) {
             rankTextView.setText(R.string.premier);
         } else if (position == 1) {

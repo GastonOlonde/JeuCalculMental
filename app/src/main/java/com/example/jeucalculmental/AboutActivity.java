@@ -1,5 +1,8 @@
 package com.example.jeucalculmental;
 
+import android.graphics.RenderEffect;
+import android.graphics.Shader;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -8,28 +11,30 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import java.util.Random;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private static final int NUM_IMAGES = 50; // Nombre d'ImageView à générer
-    private static final int DELAY_MS = 350; // Délai entre chaque génération en millisecondes
+    private static final int NUM_IMAGES = 50;
+    private static final int DELAY_MS = 350;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout); // Récupérer le ConstraintLayout
+        ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout);
         Random random = new Random();
 
-        // Handler pour introduire un délai
+
         Handler handler = new Handler(Looper.getMainLooper());
 
-        // Générer NUM_IMAGES ImageView avec un délai entre chaque génération
+
         for (int i = 0; i < NUM_IMAGES; i++) {
             final int index = i;
             handler.postDelayed(new Runnable() {
@@ -54,27 +59,21 @@ public class AboutActivity extends AppCompatActivity {
                     imageView.setLayoutParams(layoutParams);
                     constraintLayout.addView(imageView);
 
-                    // Charger les animations à partir des fichiers XML
                     Animation fallAnimation = AnimationUtils.loadAnimation(AboutActivity.this, R.anim.fall_down);
                     Animation spinAnimation = AnimationUtils.loadAnimation(AboutActivity.this, R.anim.spin);
 
-                    // Créer un ensemble d'animations et y ajouter les animations de chute et de rotation
-                    AnimationSet animationSet = new AnimationSet(true); // true pour animation intermédiaire partagée
+                    AnimationSet animationSet = new AnimationSet(true);
 
                     animationSet.addAnimation(spinAnimation);
                     animationSet.addAnimation(fallAnimation);
 
-                    // Démarrer l'ensemble des animations sur l'image
                     imageView.startAnimation(animationSet);
                 }
-            }, i * DELAY_MS); // Multiplier l'index par le délai pour échelonner les générations
+            }, i * DELAY_MS);
         }
     }
 
-    // Méthode pour obtenir une ressource d'image aléatoire
     private int getRandomImageResource() {
-        // Retourner une ressource d'image aléatoire de votre choix
-        // Par exemple, vous pouvez stocker les IDs d'images dans un tableau et retourner un élément aléatoire.
         int[] imageResources = {R.drawable.ic_plus, R.drawable.ic_minus, R.drawable.ic_equal};
         Random random = new Random();
         return imageResources[random.nextInt(imageResources.length)];
