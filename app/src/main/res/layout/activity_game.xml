@@ -122,6 +122,17 @@
                         android:layout_height="wrap_content"
                         android:onClick="submitAnswer"
                         android:text="Submit" />
+
+                    <TextView
+                        android:id="@+id/textViewCombo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Combo"
+                        android:textColor="#BD3131"
+                        android:textSize="30sp"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -328,16 +339,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/progress_layouut"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:layout_alignParentRight="true"
-        android:orientation="horizontal">
-
-
         <ProgressBar
             android:id="@+id/progressBar"
             style="@android:style/Widget.ProgressBar.Horizontal"
@@ -349,8 +350,20 @@
             android:minHeight="600dp"
             android:mirrorForRtl="true"
             android:progressDrawable="@drawable/my_custom_progressbar"
-            android:rotation="0" />
+            android:rotation="0"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBar"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>
