@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
@@ -35,32 +36,36 @@ public class AboutActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     ImageView imageView = new ImageView(AboutActivity.this);
-                    imageView.setImageResource(getRandomImageResource()); // Méthode pour obtenir une ressource d'image aléatoire
-                    imageView.setId(View.generateViewId()); // Générer un ID unique pour chaque ImageView
+                    imageView.setImageResource(getRandomImageResource());
+                    imageView.setId(View.generateViewId());
 
                     ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(
                             ConstraintLayout.LayoutParams.WRAP_CONTENT,
                             ConstraintLayout.LayoutParams.WRAP_CONTENT
                     );
 
-                    // Positionner les ImageView de manière aléatoire
-                    layoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID; // Adapter si nécessaire
-                    layoutParams.startToStart = ConstraintLayout.LayoutParams.PARENT_ID; // Adapter si nécessaire
-                    layoutParams.leftMargin = random.nextInt(2700);
-                    // layoutParams.setMargins(random.nextInt(300), random.nextInt(600), 0, 0);
+                    layoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
+                    layoutParams.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
+                    layoutParams.leftMargin = random.nextInt(2500);
 
-                    // rand entre 10 et 40
                     int val = random.nextInt(40) + 35;
                     layoutParams.width = val;
                     layoutParams.height = val;
                     imageView.setLayoutParams(layoutParams);
-                    constraintLayout.addView(imageView); // Ajouter l'ImageView au ConstraintLayout
+                    constraintLayout.addView(imageView);
 
-                    // Charger l'animation à partir du fichier XML
+                    // Charger les animations à partir des fichiers XML
                     Animation fallAnimation = AnimationUtils.loadAnimation(AboutActivity.this, R.anim.fall_down);
+                    Animation spinAnimation = AnimationUtils.loadAnimation(AboutActivity.this, R.anim.spin);
 
-                    // Lancer l'animation sur l'image
-                    imageView.startAnimation(fallAnimation);
+                    // Créer un ensemble d'animations et y ajouter les animations de chute et de rotation
+                    AnimationSet animationSet = new AnimationSet(true); // true pour animation intermédiaire partagée
+
+                    animationSet.addAnimation(spinAnimation);
+                    animationSet.addAnimation(fallAnimation);
+
+                    // Démarrer l'ensemble des animations sur l'image
+                    imageView.startAnimation(animationSet);
                 }
             }, i * DELAY_MS); // Multiplier l'index par le délai pour échelonner les générations
         }

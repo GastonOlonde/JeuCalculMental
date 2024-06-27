@@ -7,4 +7,17 @@
     <string name="premier">PREMIER</string>
     <string name="deuxieme">DEUXIEME</string>
     <string name="troisieme">TROISIEME</string>
+    <string name="reglages">Réglages</string>
+    <string name="titlesettings">Réglages</string>
+    <string name="musique">Musique</string>
+    <string name="volume">Volume</string>
+    <string name="next_music">Musique suivante</string>
+    <string name="passer">Passer</string>
+    <string name="HighScores">Meilleurs Scores</string>
+    <string name="text_bonus">Fonctionnalités Bonus</string>
+    <string name="bonus">
+        Activity game avec progressBar, coeurs pour les vies, un clavier personnalisé et combo de points.
+        Musiques de fond et effets sonores, reglable dans les paramètres.
+        Animation de fond sur ActivityAbout.
+    </string>
 </resources>

@@ -11,7 +11,7 @@
         android:id="@+id/high_score_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="High Scores:"
+        android:text="@string/HighScores"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:paddingBottom="16dp" />

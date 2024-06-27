@@ -2,25 +2,24 @@ package com.example.jeucalculmental;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnStartGame;
-    private Button btnViewHighScore;
-    private Button btnAbout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnStartGame = findViewById(R.id.btnStartGame);
-        btnViewHighScore = findViewById(R.id.btnHighScore);
-        btnAbout = findViewById(R.id.btnAbout);
+        // Démarrer la musique
+        MusicManager.startMusic(this);
+
+        Button btnStartGame = findViewById(R.id.btnStartGame);
+        Button btnViewHighScore = findViewById(R.id.btnHighScore);
+        Button btnAbout = findViewById(R.id.btnAbout);
+        Button btnMusicSettings = findViewById(R.id.btnMusicSettings);
 
         btnStartGame.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, GameActivity.class);
@@ -36,5 +35,17 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         });
+
+        btnMusicSettings.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, MusicSettingsActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Arrêter la musique lorsque l'activité est détruite
+        MusicManager.stopMusic();
     }
 }

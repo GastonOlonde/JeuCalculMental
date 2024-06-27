@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="500dp"
         android:orientation="vertical"
         android:gravity="center"
         android:background="@drawable/background_border"
@@ -44,6 +44,31 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"/>
 
+<!--        fonctionnalité bonus -->
+        <TextView
+            android:id="@+id/textBonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_bonus"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/textAuthors"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/textBonusAuthors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bonus"
+            android:background="@color/colorbg"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/textBonus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

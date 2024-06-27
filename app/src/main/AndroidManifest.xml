@@ -26,6 +26,7 @@
     <activity android:name=".GameActivity" />
     <activity android:name=".HighScoreActivity" />
     <activity android:name=".AboutActivity" />
+    <activity android:name=".MusicSettingsActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

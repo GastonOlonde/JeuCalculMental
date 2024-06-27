@@ -8,4 +8,17 @@
     <string name="premier">PRIMERO</string>
     <string name="deuxieme">SEGUNDO</string>
     <string name="troisieme">TERCERO</string>
+    <string name="reglages">Ajustes</string>
+    <string name="titlesettings">Ajustes</string>
+    <string name="musique">Música</string>
+    <string name="volume">Volumen</string>
+    <string name="next_music">Siguiente música</string>
+    <string name="passer">Pasar</string>
+    <string name="HighScores">Mejores puntuaciones</string>
+    <string name="text_bonus">Caracteristicas adicionales</string>
+    <string name="bonus">
+        Actividad de juego con barra de progreso, corazones para vidas, un teclado personalizado y combinación de puntos.
+        Música de fondo y efectos de sonido, ajustable en la configuración.
+        Animación de fondo en ActivityAbout.
+    </string>
 </resources>
